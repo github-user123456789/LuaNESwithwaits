@@ -35,8 +35,9 @@ PPU.RP2C02_HVINT = PPU.RP2C02_VINT * PPU.RP2C02_HSYNC
 PPU.RP2C02_HVSYNC_0 = PPU.RP2C02_VSYNC * PPU.RP2C02_HSYNC
 PPU.RP2C02_HVSYNC_1 = PPU.RP2C02_VSYNC * PPU.RP2C02_HSYNC - PPU.RP2C02_CC
 print("got past init properties")
-
+print("a")
 -- special scanlines
+print("wth")
 PPU.SCANLINE_HDUMMY = -1 -- pre-render scanline
 PPU.SCANLINE_VBLANK = 240 -- post-render scanline
 print("got past scanlin")
