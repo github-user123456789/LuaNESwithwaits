@@ -1629,6 +1629,6 @@ function PPU:main_loop()
         task.wait()
     end
 end
-print("it is work.")
+print("it is work,")
 print(PPU)
 return PPU
