@@ -7,7 +7,9 @@ local map, rotatePositiveIdx, nthBitIsSet, nthBitIsSetInt, range =
     UTILS.range
 
 local PPU = {}
+print("got past PPU = {}")
 PPU._mt = {__index = PPU}
+print("got past _mt")
 function PPU:new(conf, cpu, palette)
     local ppu = {}
     setmetatable(ppu, PPU._mt)
@@ -32,6 +34,7 @@ PPU.RP2C02_HVSYNCBOOT = PPU.RP2C02_VACTIVE * PPU.RP2C02_HSYNC + PPU.RP2C02_CC * 
 PPU.RP2C02_HVINT = PPU.RP2C02_VINT * PPU.RP2C02_HSYNC
 PPU.RP2C02_HVSYNC_0 = PPU.RP2C02_VSYNC * PPU.RP2C02_HSYNC
 PPU.RP2C02_HVSYNC_1 = PPU.RP2C02_VSYNC * PPU.RP2C02_HSYNC - PPU.RP2C02_CC
+print("got past init properties")
 
 -- special scanlines
 PPU.SCANLINE_HDUMMY = -1 -- pre-render scanline
