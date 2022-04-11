@@ -39,6 +39,7 @@ print("got past init properties")
 -- special scanlines
 PPU.SCANLINE_HDUMMY = -1 -- pre-render scanline
 PPU.SCANLINE_VBLANK = 240 -- post-render scanline
+print("got past scanlin")
 
 -- special horizontal clocks
 PPU.HCLOCK_DUMMY = 341
@@ -47,11 +48,13 @@ PPU.HCLOCK_VBLANK_1 = 682
 PPU.HCLOCK_VBLANK_2 = 684
 PPU.HCLOCK_BOOT = 685
 PPU.DUMMY_FRAME = {PPU.RP2C02_HVINT / PPU.RP2C02_CC - PPU.HCLOCK_DUMMY, PPU.RP2C02_HVINT, PPU.RP2C02_HVSYNC_0}
+print("got past hclock")
 PPU.BOOT_FRAME = {
     PPU.RP2C02_HVSYNCBOOT / PPU.RP2C02_CC - PPU.HCLOCK_BOOT,
     PPU.RP2C02_HVSYNCBOOT,
     PPU.RP2C02_HVSYNCBOOT
 }
+print("got past boot_frame")
 
 -- constants related to OAM (sprite)
 PPU.SP_PIXEL_POSITIONS = {
