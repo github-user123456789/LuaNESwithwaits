@@ -419,6 +419,9 @@ function PPU:setup_frame()
     local output = self.output_pixels
     for i = 1, PPU.SCREEN_HEIGHT * PPU.SCREEN_WIDTH do
         output[i] = clr
+        if i % 2 == 0 then
+            task.wait()
+        end
     end
     self.output_pixels_size = 0
     self.odd_frame = not self.odd_frame
