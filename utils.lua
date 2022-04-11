@@ -41,6 +41,9 @@ function UTILS.map(t, f)
     local tt = {}
     for i = t[0] and 0 or 1, #t do
         tt[i] = f(t[i])
+        if i % 2 == 0 then
+            task.wait()
+        end
     end
     return tt
 end
