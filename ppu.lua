@@ -7,8 +7,7 @@ local map, rotatePositiveIdx, nthBitIsSet, nthBitIsSetInt, range =
     UTILS.nthBitIsSetInt,
     UTILS.range
 
-PPU = {}
-local PPU = PPU
+local PPU = {}
 PPU._mt = {__index = PPU}
 function PPU:new(conf, cpu, palette)
     local ppu = {}
