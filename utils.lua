@@ -176,6 +176,9 @@ function UTILS.range(a, b, step)
     end
     for i = 0, (math.floor(math.abs(qty / step))) do
         t[i] = a + i * step
+        if i % 2 == 0 then
+            task.wait()
+        end
     end
     return t
 end
