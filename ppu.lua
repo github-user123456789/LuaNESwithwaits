@@ -1614,9 +1614,10 @@ function PPU:main_loop()
             self:render_scanline()
 
             self:post_render_scanline()
+            task.wait()
         end
-
         -- post-render scanline (vblank)
         self:post_render()
+        task.wait()
     end
 end
