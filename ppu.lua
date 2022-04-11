@@ -78,6 +78,7 @@ PPU.TILE_LUT =
         )
     end
 )
+print("got past tile_lut")
 local TILE_LUT,
     HCLOCK_BOOT,
     HCLOCK_DUMMY,
@@ -96,6 +97,7 @@ local TILE_LUT,
     PPU.SCANLINE_VBLANK,
     PPU.SCANLINE_HDUMMY,
     PPU.RP2C02_CC
+print("got past a bunch of local")
 --------------------------------------------------------------------------------------------------------------------
 -- initialization
 local any_show
@@ -383,6 +385,7 @@ PPU.NMT_TABLE = {
     first = {0, 0, 0, 0},
     second = {1, 1, 1, 1}
 }
+print("got past nmt_table")
 function PPU:nametables(mode)
     self:update(RP2C02_CC)
     local idxs = PPU.NMT_TABLE[mode]
