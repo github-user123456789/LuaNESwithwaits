@@ -16,6 +16,8 @@ function PPU:new(conf, cpu, palette)
     return ppu
 end
 
+print("working")
+
 PPU.SCREEN_HEIGHT = 240
 PPU.SCREEN_WIDTH = 256
 -- clock/timing constants (stolen from Nestopia)
