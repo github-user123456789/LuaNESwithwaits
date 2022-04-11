@@ -59,6 +59,7 @@ PPU.SP_PIXEL_POSITIONS = {
     {4, 0, 5, 1, 6, 2, 7, 3} -- flip
 }
 
+print("dead")
 -- A look-up table mapping: (two pattern bytes * attr) -> eight pixels
 --   TILE_LUT[attr][high_byte * 0x100 + low_byte] = [pixels] * 8
 PPU.TILE_LUT =
