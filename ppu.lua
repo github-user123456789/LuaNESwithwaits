@@ -1624,3 +1624,5 @@ function PPU:main_loop()
         task.wait()
     end
 end
+
+return PPU
