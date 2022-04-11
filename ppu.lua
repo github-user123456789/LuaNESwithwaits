@@ -1,3 +1,4 @@
+print("SENDHELP!!") warn("SENDHELP!!")
 local band, bor, bxor, bnot, lshift, rshift = bit.band, bit.bor, bit.bxor, bit.bnot, bit.lshift, bit.rshift
 local map, rotatePositiveIdx, nthBitIsSet, nthBitIsSetInt, range =
     UTILS.map,
