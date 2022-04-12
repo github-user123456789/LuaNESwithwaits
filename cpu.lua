@@ -1128,11 +1128,10 @@ function CPU:run_once()
             ))
     end
     --]]
-    print(self._pc)
-    if self._pc then
+    if self._pc ~= nil then
         self._pc = self._pc + 1
     else
-        self._pc = 0
+        --self._pc = 0
     end
 
     --[[
