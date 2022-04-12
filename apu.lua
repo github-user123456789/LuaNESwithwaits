@@ -1055,3 +1055,5 @@ end
 function DMC:status()
   return self.dma_length_counter > 0
 end
+
+return APU
