@@ -101,3 +101,5 @@ function NES:new(opts)
     nes.frame_target = nil
     return nes
 end
+
+return NES
