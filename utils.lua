@@ -332,3 +332,5 @@ function UTILS.class(parent)
     end
     return class
 end
+
+return UTILS
