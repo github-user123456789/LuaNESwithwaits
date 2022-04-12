@@ -162,7 +162,7 @@ function ROM.load(conf, cpu, ppu)
     print("mapperlive")
 
     local klass = ROM.MAPPER_DB[mapper]
-    prin("klasslive")
+    print("klasslive")
     if not klass then
         error(string.format("Unsupported mapper type 0x%02x", mapper))
     end
