@@ -1128,7 +1128,7 @@ function CPU:run_once()
             ))
     end
     --]]
-    if self._pc ~= nil then
+    if self._pc ~= nil and type(self._pc) == "number" then
         self._pc = self._pc + 1
     else
         --self._pc = 0
