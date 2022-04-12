@@ -179,7 +179,7 @@ function UTILS.range(a, b, step)
         t[i] = a + i * step
         if i % 100 == 0 then
             task.wait()
-            print("waited")
+            print("waited ")
         end
     end
     return t
