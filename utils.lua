@@ -174,8 +174,12 @@ function UTILS.range(a, b, step)
             qty = -qty
         end
     end
+    print(math.floor(math.abs(qty / step)))
     for i = 0, (math.floor(math.abs(qty / step))) do
         t[i] = a + i * step
+        if i % 5 == 0 then
+            task.wait()
+        end
     end
     return t
 end
