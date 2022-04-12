@@ -120,6 +120,7 @@ function PPU:initialize(conf, cpu, palette)
     )
 
     --self.output_pixels = {}
+    print(UTILS, UTILS.fill, self.palette)
     self.output_pixels = UTILS.fill({}, self.palette[16], PPU.SCREEN_HEIGHT * PPU.SCREEN_WIDTH)
 
     self.output_pixels_size = 0
