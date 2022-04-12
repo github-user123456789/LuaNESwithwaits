@@ -175,12 +175,11 @@ function UTILS.range(a, b, step)
         end
     end
     print(math.floor(math.abs(qty / step)))
-    print("updated")
     for i = 0, (math.floor(math.abs(qty / step))) do
         t[i] = a + i * step
-        if i % 500 == 0 then
+        if i % 4000 == 0 then
             task.wait()
-            print("waited ")
+            print("waited")
         end
     end
     return t
