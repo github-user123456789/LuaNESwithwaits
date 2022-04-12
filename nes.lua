@@ -62,9 +62,13 @@ function NES:new(opts)
     local conf = {romfile = opts.file, pc = opts.pc or nil, loglevel = opts.loglevel or 0}
     local nes = {}
     local palette = opts.palette or PALETTE:defacto_palette()
+    print("live1")
     setmetatable(nes, NES._mt)
+    print("live2")
     nes.cpu = CPU:new(conf)
+    print("livecpu")
     nes.cpu.apu = APU:new(conf, nes.cpu)
+    print("liveapu")
     --[[
         clock_dma = function(clk)
         end,
@@ -90,12 +94,16 @@ function NES:new(opts)
     }
     --]]
     nes.cpu.ppu = PPU:new(conf, nes.cpu, palette)
+    print("liveppu")
     nes.pads = {
         reset = function()
         end
     }
+    print("live3")
     nes.rom = ROM.load(conf, nes.cpu, nes.cpu.ppu)
+    print("liverom")
     nes.pads = Pads:new(conf, nes.cpu, nes.cpu.apu)
+    print("livepads")
 
     nes.frame = 0
     nes.frame_target = nil
