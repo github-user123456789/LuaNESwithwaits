@@ -179,7 +179,7 @@ function UTILS.range(a, b, step)
         for i = 0, (math.floor(math.abs(qty / step))) do
             t[i] = a + i * step
             if i % 40000 == 0 then
-                --task.wait()
+                task.wait()
                 print("waited")
             end
         end
