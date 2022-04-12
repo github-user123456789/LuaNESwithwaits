@@ -1128,7 +1128,7 @@ function CPU:run_once()
             ))
     end
     --]]
-    print(self._pc == nil, type(self._pc))
+    --print(self._pc == nil, type(self._pc))
     if self._pc ~= nil and type(self._pc) == "number" then
         self._pc = self._pc + 1
     else
@@ -1139,7 +1139,9 @@ function CPU:run_once()
     DISPATCHER[self.opcode](self)
     ]]
     local operationData = DISPATCH[self.opcode]
-    self[operationData[1]](self, unpack(operationData, 2))
+    if self[operationData[1]] then
+        self[operationData[1]](self, unpack(operationData, 2))
+    end
     if self.ppu_sync then
         self.ppu:sync(self.clk)
     end
