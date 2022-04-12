@@ -114,6 +114,7 @@ end
 
 -- read an addr (8 bit)
 function CPU:fetch(addr)
+    print(self._fetch)
     return self._fetch[addr](addr)
 end
 function CPU:store(addr, value)
