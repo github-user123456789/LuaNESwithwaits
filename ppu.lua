@@ -428,7 +428,7 @@ function PPU:setup_frame()
         if i % 30000 == 0 then
             task.wait()
         end
-    end; print(clr)
+    end
     self.output_pixels_size = 0
     self.odd_frame = not self.odd_frame
     local t = self.hclk == HCLOCK_DUMMY and DUMMY_FRAME or BOOT_FRAME
