@@ -114,7 +114,6 @@ end
 
 -- read an addr (8 bit)
 function CPU:fetch(addr)
-    print(addr == nil, self == nil, self._fetch == nil, self._fetch[addr] == nil)
     if self._fetch[addr] then
         return self._fetch[addr](addr)
     end
@@ -1129,7 +1128,12 @@ function CPU:run_once()
             ))
     end
     --]]
-    self._pc = self._pc + 1
+    print(self._pc)
+    if self._pc then
+        self._pc = self._pc + 1
+    else
+        self._pc = 0
+    end
 
     --[[
     DISPATCHER[self.opcode](self)
