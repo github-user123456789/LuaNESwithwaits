@@ -1,4 +1,3 @@
-print(require, require "libs/complex")
 local complex = require "libs/complex"
 
 local band, bor, bxor, bnot, lshift, rshift = bit.band, bit.bor, bit.bxor, bit.bnot, bit.lshift, bit.rshift
@@ -11,7 +10,6 @@ local map, rotatePositiveIdx, nthBitIsSet, nthBitIsSetInt =
 PALETTE = {}
 local PALETTE = PALETTE
 
-print("live")
 function PALETTE:defacto_palette()
     local p =
         UTILS.flat_map(
@@ -110,7 +108,6 @@ function PALETTE:defacto_palette()
 end
 --[
 -- Nestopia generates a palette systematically (cool!), but it is not compatible with nes-tests-rom
-print("live2")
 function PALETTE:nestopia_palette()
     return UTILS.map(
         range(0, 511),
@@ -159,5 +156,4 @@ function PALETTE:nestopia_palette()
 end
 --]]
 
-print("live3")
 return PALETTE
