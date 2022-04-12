@@ -141,11 +141,15 @@ function ROM:new(conf, cpu, ppu, basename, bytes, str)
 end
 
 function ROM.load(conf, cpu, ppu)
+    print("FILENAMELIVE")
     local filename = conf.romfile
+    print("pathlive")
     local path, basename, extension = string.match(filename, "(.-)([^\\]-([^\\%.]+))$")
 
     local inp = assert(io.open(filename, "rb"))
+    print("inplive")
     local str = inp:read("*all")
+    print("readlive")
     assert(inp:close())
     local blob = {}
     for i = 1, str:len() do
