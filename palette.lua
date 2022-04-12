@@ -155,3 +155,5 @@ function PALETTE:nestopia_palette()
     )
 end
 --]]
+
+return PALETTE
