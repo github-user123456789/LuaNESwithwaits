@@ -1,3 +1,4 @@
+print(require, requrie "libs/complex")
 local complex = require "libs/complex"
 
 local band, bor, bxor, bnot, lshift, rshift = bit.band, bit.bor, bit.bxor, bit.bnot, bit.lshift, bit.rshift
