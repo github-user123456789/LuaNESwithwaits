@@ -100,3 +100,5 @@ function Pad:poll_state()
 
   return state
 end
+
+return Pads
