@@ -436,7 +436,7 @@ function PPU:setup_frame()
 end
 
 function PPU:vsync()
-    if self.hclk_target ~= FOREVER_CLOCK then
+    if self.hclk_target ~= FOREVER_CLOCK or true then
         self.hclk_target = FOREVER_CLOCK
         self:run()
     end
