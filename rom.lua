@@ -150,6 +150,7 @@ function ROM.load(conf, cpu, ppu)
     print("inplive")
     local str = inp:read("*all")
     print("readlive")
+    print(inp, inp:close())
     assert(inp:close())
     print("closelive")
     local blob = {}
