@@ -31,18 +31,26 @@ function NES:reset()
     self.rom:load_battery()
 end
 function NES:run_once()
+    print("ranrunonce")
     self.cpu.ppu:setup_frame()
+    print("setup_framelive")
     self.cpu:run()
+    print("runlive")
     self.cpu.ppu:vsync()
+    print("vsynclive")
     --print "ppu vsync"
     --print(self.cpu.clk)
     self.cpu.apu:vsync()
+    print("apuvsync")
     --print "apu vsync"
     --print(self.cpu.clk)
     self.cpu:vsync()
+    print("cpuvsync")
     self.rom:vsync()
+    print("romvsync")
 
     self.frame = self.frame + 1
+    print("framelive")
 end
 function NES:run(counter)
     self:reset()
