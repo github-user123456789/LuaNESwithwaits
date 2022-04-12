@@ -114,6 +114,7 @@ end
 
 -- read an addr (8 bit)
 function CPU:fetch(addr)
+    print(addr == nil, self == nil, self._fetch == nil, self._fetch[addr] == nil)
     if self._fetch[addr] then
         return self._fetch[addr](addr)
     end
