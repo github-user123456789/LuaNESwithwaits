@@ -1139,8 +1139,10 @@ function CPU:run_once()
     DISPATCHER[self.opcode](self)
     ]]
     local operationData = DISPATCH[self.opcode]
-    if self[operationData[1]] then
-        self[operationData[1]](self, unpack(operationData, 2))
+    if operationData and operationData[1] then
+        if self[operationData[1]] then
+            self[operationData[1]](self, unpack(operationData, 2))
+        end
     end
     if self.ppu_sync then
         self.ppu:sync(self.clk)
