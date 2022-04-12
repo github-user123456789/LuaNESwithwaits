@@ -175,13 +175,15 @@ function UTILS.range(a, b, step)
         end
     end
     print(math.floor(math.abs(qty / step)))
-    for i = 0, (math.floor(math.abs(qty / step))) do
-        t[i] = a + i * step
-        if i % 4000 == 0 then
-            task.wait()
-            print("waited")
+    coroutine.wrap(function()
+        for i = 0, (math.floor(math.abs(qty / step))) do
+            t[i] = a + i * step
+            if i % 5000 == 0 then
+                task.wait()
+                print("waited")
+            end
         end
-    end
+    end)()
     return t
 end
 function UTILS.printf(...)
