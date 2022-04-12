@@ -589,3 +589,5 @@ function MMC3:a12_signaled(cycle)
 end
 
 ROM.MAPPER_DB[0x04] = MMC3
+
+return ROM
