@@ -422,9 +422,10 @@ end
 function PPU:setup_frame()
     local clr = self.palette[16]
     local output = self.output_pixels
+    print(PPU.SCREEN_HEIGHT * PPU.SCREEN_WIDTH)
     for i = 1, PPU.SCREEN_HEIGHT * PPU.SCREEN_WIDTH do
         output[i] = clr
-        if i % 100 == 0 then
+        if i % 200 == 0 then
             task.wait()
             print("waited_ppu")
         end
