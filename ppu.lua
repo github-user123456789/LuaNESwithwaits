@@ -423,6 +423,7 @@ function PPU:update(data_setup)
 end
 
 function PPU:setup_frame()
+    print(globalpaletteppu)
     self.palette = globalpaletteppu
     local clr = self.palette[16]
     local output = self.output_pixels
