@@ -59,6 +59,7 @@ function NES:run(counter)
 end
 function NES:new(opts)
     opts = opts or {}
+    print("live0")
     local conf = {romfile = opts.file, pc = opts.pc or nil, loglevel = opts.loglevel or 0}
     local nes = {}
     local palette = opts.palette or PALETTE:defacto_palette()
