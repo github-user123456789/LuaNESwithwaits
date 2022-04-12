@@ -104,10 +104,12 @@ print("got past a bunch of local")
 --------------------------------------------------------------------------------------------------------------------
 -- initialization
 local any_show
+globalpaletteppu = nil
 function PPU:initialize(conf, cpu, palette)
     self.conf = conf
     self.cpu = cpu
     self.palette = palette
+    globalpaletteppu = palette
 
     self.nmt_mem = {[0] = UTILS.fill({}, 0xff, 0x400, 1, -1), [1] = UTILS.fill({}, 0xff, 0x400, 1, -1)}
     --[  [0xff] * 0x400, [0xff] * 0x400]
@@ -421,6 +423,7 @@ function PPU:update(data_setup)
 end
 
 function PPU:setup_frame()
+    self.palette = globalpaletteppu
     local clr = self.palette[16]
     local output = self.output_pixels
     for i = 1, PPU.SCREEN_HEIGHT * PPU.SCREEN_WIDTH do
