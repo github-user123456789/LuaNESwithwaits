@@ -424,7 +424,7 @@ function PPU:setup_frame()
     local output = self.output_pixels
     for i = 1, PPU.SCREEN_HEIGHT * PPU.SCREEN_WIDTH do
         output[i] = clr
-        if i % 1000 == 0 then
+        if i % 30000 == 0 then
             task.wait()
         end
     end
