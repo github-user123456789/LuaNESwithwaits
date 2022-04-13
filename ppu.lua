@@ -110,6 +110,7 @@ function PPU:initialize(conf, cpu, palette)
     self.cpu = cpu
     self.palette = palette
     globalpaletteppu = palette
+    print(#globalpaletteppu)
 
     self.nmt_mem = {[0] = UTILS.fill({}, 0xff, 0x400, 1, -1), [1] = UTILS.fill({}, 0xff, 0x400, 1, -1)}
     --[  [0xff] * 0x400, [0xff] * 0x400]
