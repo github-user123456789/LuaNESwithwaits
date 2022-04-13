@@ -1633,20 +1633,14 @@ function PPU:main_loop()
             self:render_scanline()
 
             self:post_render_scanline()
-            if wi2 % 15 == 0 then
+            if wi2 % 100 == 0 then
                 task.wait()
-                if math.random(1, 25) == 1 then
-                    print("oops i waited")
-                end
             end
         end
         -- post-render scanline (vblank)
         self:post_render()
-        if wi % 15 == 0 then
+        if wi % 100 == 0 then
             task.wait()
-            if math.random(1, 25) == 1 then
-                print("oops i waited")
-            end
         end
     end
 end
