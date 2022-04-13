@@ -159,7 +159,6 @@ function ROM.load(conf, cpu, ppu)
     local blob = {}
     for i = 1, str:len() do
         blob[i] = str:byte(i, i)
-        print(blob[i])
     end
     print("bytelive and bloblive")
     local mapper = bor(rshift(blob[7], 4), band(blob[8], 0xf0))
