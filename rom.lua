@@ -123,6 +123,7 @@ function ROM:load_battery()
 end
 
 function ROM:save_battery()
+    --[[
     if not self.battery then
         return
     end
@@ -131,6 +132,7 @@ function ROM:save_battery()
     local out = assert(io.open(sav, "wb"))
     out:write(serpent.dump(self.wrk))
     assert(out:close())
+    ]]
 end
 
 function ROM:new(conf, cpu, ppu, basename, bytes, str)
@@ -145,6 +147,7 @@ function ROM.load(conf, cpu, ppu)
     local filename = conf.romfile
     print("pathlive")
     local path, basename, extension = string.match(filename, "(.-)([^\\]-([^\\%.]+))$")
+    print(path, basename, extension)
 
     local inp = assert(io.open(filename, "rb"))
     print("inplive")
@@ -156,6 +159,7 @@ function ROM.load(conf, cpu, ppu)
     local blob = {}
     for i = 1, str:len() do
         blob[i] = str:byte(i, i)
+        print(blob[i])
     end
     print("bytelive and bloblive")
     local mapper = bor(rshift(blob[7], 4), band(blob[8], 0xf0))
