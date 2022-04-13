@@ -1168,10 +1168,10 @@ function CPU:run()
             repeat
                 ri2 = ri2 + 1
                 self:run_once()
-                if ri2 % 25 == 1 then task.wait() end
+                if ri2 % 45 == 1 then task.wait() end
             until not (self.clk < self.clk_target)
             self:do_clock()
-            if ri % 25 == 1 then task.wait() end
+            if ri % 45 == 1 then task.wait() end
         until not (self.clk < self.clk_frame)
     end)()
 end
