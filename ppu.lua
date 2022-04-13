@@ -1633,7 +1633,7 @@ function PPU:main_loop()
             self:render_scanline()
 
             self:post_render_scanline()
-            if wi2 % 2 == 0 then
+            if wi2 % 1 == 0 then
                 task.wait()
             end
         end
