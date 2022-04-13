@@ -443,7 +443,7 @@ function PPU:setup_frame()
 end
 
 function PPU:vsync()
-    if self.hclk_target ~= FOREVER_CLOCK or true then
+    if self.hclk_target ~= FOREVER_CLOCK then
         self.hclk_target = FOREVER_CLOCK
         self:run()
     end
@@ -1635,7 +1635,7 @@ function PPU:main_loop()
             self:post_render_scanline()
             if wi2 % 15 == 0 then
                 task.wait()
-                if math.random(1, 100) == 1 then
+                if math.random(1, 25) == 1 then
                     print("oops i waited")
                 end
             end
@@ -1644,7 +1644,7 @@ function PPU:main_loop()
         self:post_render()
         if wi % 15 == 0 then
             task.wait()
-            if math.random(1, 100) == 1 then
+            if math.random(1, 25) == 1 then
                 print("oops i waited")
             end
         end
