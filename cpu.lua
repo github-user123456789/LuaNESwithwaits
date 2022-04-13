@@ -1159,17 +1159,21 @@ function CPU:run_once()
     ]]
 end
 function CPU:run()
-    --coroutine.wrap(function()
+    coroutine.wrap(function()
         self:do_clock()
+        local ri = 0
+        local ri2 = 0
         repeat
+            ri = ri + 1
             repeat
+                ri2 = ri2 + 1
                 self:run_once()
-                task.wait()
+                if ri2 % 25 == 1 then task.wait() end
             until not (self.clk < self.clk_target)
             self:do_clock()
-            task.wait()
+            if ri % 25 == 1 then task.wait() end
         until not (self.clk < self.clk_frame)
-    --end)()
+    end)()
 end
 
 CPU.ADDRESSING_MODES = {
