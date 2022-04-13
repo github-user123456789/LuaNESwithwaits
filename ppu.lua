@@ -426,9 +426,9 @@ end
 function PPU:setup_frame()
     self.palette = globalpaletteppu
     local clr = self.palette[16]
-    print("----------------------------------------------------------")
-    print("PALETTE DEBUG ------>", clr, #self.palette, self.palette[1])
-    print("----------------------------------------------------------")
+    --print("----------------------------------------------------------")
+    --print("PALETTE DEBUG ------>", clr, #self.palette, self.palette[1])
+    --print("----------------------------------------------------------")
     local output = self.output_pixels
     for i = 1, PPU.SCREEN_HEIGHT * PPU.SCREEN_WIDTH do
         output[i] = clr
