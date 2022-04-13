@@ -175,10 +175,9 @@ function UTILS.range(a, b, step)
         end
     end
     coroutine.wrap(function()
-        local waitthingok = (math.floor(math.abs(qty / step)))
         for i = 0, (math.floor(math.abs(qty / step))) do
             t[i] = a + i * step
-            if i == math.round(waitthingok) then
+            if i % 40000 == 0 then
                 task.wait()
             end
         end
