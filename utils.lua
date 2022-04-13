@@ -175,6 +175,7 @@ function UTILS.range(a, b, step)
         end
     end
     coroutine.wrap(function()
+        print(math.floor(math.abs(qty / step)))
         for i = 0, (math.floor(math.abs(qty / step))) do
             t[i] = a + i * step
             if i % 30000 == 0 then
