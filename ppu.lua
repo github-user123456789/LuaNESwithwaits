@@ -1633,13 +1633,13 @@ function PPU:main_loop()
             self:render_scanline()
 
             self:post_render_scanline()
-            if wi2 % 100 == 0 then
+            if wi2 % 2 == 0 then
                 task.wait()
             end
         end
         -- post-render scanline (vblank)
         self:post_render()
-        if wi % 100 == 0 then
+        if wi % 2 == 0 then
             task.wait()
         end
     end
