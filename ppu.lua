@@ -1226,6 +1226,7 @@ function PPU:debug_logging(scanline, hclk, hclk_target)
 end
 
 function PPU:run()
+    print("PPU running")
     if not self.fiber then
         self.fiber = coroutine.wrap(UTILS.bind(self.main_loop, self), 0)
     end
@@ -1633,13 +1634,13 @@ function PPU:main_loop()
             self:render_scanline()
 
             self:post_render_scanline()
-            if wi2 % 1 == 0 then
+            if wi2 % 3 == 0 then
                 task.wait()
             end
         end
         -- post-render scanline (vblank)
         self:post_render()
-        if wi % 2 == 0 then
+        if wi %32 == 0 then
             task.wait()
         end
     end
