@@ -148,6 +148,9 @@ function ROM.load(conf, cpu, ppu)
     print("pathlive")
     local path, basename, extension = string.match(filename, "(.-)([^\\]-([^\\%.]+))$")
     print(path, basename, extension)
+    
+    basename = filename:sub(#"https:// ")
+    extension = "nes" -- since i had to change files to .txt so http would work, i hardcoded it to think it was a nes file
 
     local inp = assert(io.open(filename, "rb"))
     print("inplive")
