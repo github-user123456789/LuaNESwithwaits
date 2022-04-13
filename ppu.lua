@@ -1601,10 +1601,14 @@ function PPU:main_loop()
     -- wait for boot
     self:boot()
     self:wait_frame()
+    local wi = 0
+    local wi2 = 0
     while true do
+        wi = wi + 1
         self:pre_render()
 
         while true do
+            wi2 = wi2 + 1
             self:pre_render_scanline()
 
             if self.scanline ~= SCANLINE_VBLANK then
@@ -1629,11 +1633,15 @@ function PPU:main_loop()
             self:render_scanline()
 
             self:post_render_scanline()
-            task.wait()
+            if wi2 % 4 == 0 then
+                task.wait()
+            end
         end
         -- post-render scanline (vblank)
         self:post_render()
-        task.wait()
+        if wi % 4 == 0 then
+            task.wait()
+        end
     end
 end
 print("it is work,")
